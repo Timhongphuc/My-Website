@@ -56,7 +56,7 @@ export default function Home() {
             <FaMedium className="h-5 w-5" />
             <span className="sr-only">Medium</span>
           </Link>
-          <Link
+          {/*<Link
             href="https://www.behance.net/timseufert1/"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export default function Home() {
           >
             <FaBehance className="h-5 w-5" />
             <span className="sr-only">Behance</span>
-          </Link>
+          </Link>*/}
           <Link
             href="https://portfolio.de.tumo.world/p/lqg1d406zry9vwnx16z1k52pn7xmow3v"
             target="_blank"
@@ -278,7 +278,7 @@ export default function Home() {
                 <FaMedium className="h-5 w-5" />
                 <span>medium.com/@tiefentechnik</span>
               </Link>
-              <Link
+              {/*<Link
                 href="https://behance.net/timseufert1/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -286,7 +286,7 @@ export default function Home() {
               >
                 <FaBehance className="h-5 w-5" />
                 <span>behance.net/timseufert1</span>
-              </Link>
+              </Link>*/}
             </div>
           </div>
         </div>
