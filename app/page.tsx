@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
 import { MdVideocam, Md3dRotation, MdPrint, MdMusicNote } from "react-icons/md"
-import { InteractiveTerminal } from "@/components/interactive-terminal"
+import { TerminalSection } from "@/components/terminal-section"
+import Section from "@/components/section" // Declare the Section variable
 
 export default function Home() {
   return (
@@ -56,7 +57,7 @@ export default function Home() {
             <FaMedium className="h-5 w-5" />
             <span className="sr-only">Medium</span>
           </Link>
-          {/*<Link
+          <Link
             href="https://www.behance.net/timseufert1/"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +65,7 @@ export default function Home() {
           >
             <FaBehance className="h-5 w-5" />
             <span className="sr-only">Behance</span>
-          </Link>*/}
+          </Link>
           <Link
             href="https://portfolio.de.tumo.world/p/lqg1d406zry9vwnx16z1k52pn7xmow3v"
             target="_blank"
@@ -245,7 +246,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-muted/50 py-24">
+      <Section id="contact" className="bg-muted/50 py-24">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Get in Touch</h2>
           <div className="mx-auto max-w-md">
@@ -278,7 +279,7 @@ export default function Home() {
                 <FaMedium className="h-5 w-5" />
                 <span>medium.com/@tiefentechnik</span>
               </Link>
-              {/*<Link
+              <Link
                 href="https://behance.net/timseufert1/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -286,11 +287,14 @@ export default function Home() {
               >
                 <FaBehance className="h-5 w-5" />
                 <span>behance.net/timseufert1</span>
-              </Link>*/}
+              </Link>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
+
+      {/* Interactive Terminal Section */}
+      <TerminalSection />
 
       {/* Footer */}
       <footer className="border-t py-8">
@@ -301,9 +305,6 @@ export default function Home() {
           <div className="flex space-x-4"></div>
         </div>
       </footer>
-
-      {/* Interactive Terminal */}
-      <InteractiveTerminal />
     </div>
   )
 }
