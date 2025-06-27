@@ -6,7 +6,6 @@ import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
 import { MdVideocam, Md3dRotation, MdPrint, MdMusicNote } from "react-icons/md"
 import { TerminalSection } from "@/components/terminal-section"
-import Section from "@/components/section" // Declare the Section variable
 
 export default function Home() {
   return (
@@ -28,7 +27,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          <Button variant="outline" size="sm" className="md:hidden">
+          <Button variant="outline" size="sm" className="md:hidden bg-transparent">
             Menu
           </Button>
         </div>
@@ -36,7 +35,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="container flex min-h-screen flex-col items-center justify-center py-24 text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Hi, I'am Tim Seufert</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Hi, I&apos;m Tim Seufert</h1>
         <p className="mt-4 text-xl text-muted-foreground">High School Developer</p>
         <div className="mt-8 flex space-x-4">
           <Link
@@ -74,7 +73,7 @@ export default function Home() {
           >
             <img
               src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreidhf6okeioofrwg6biky7wmsk4mnojowpoholckt2ohvociks6ne4"
-              alt="T"
+              alt="TUMO Logo"
               className="h-5 w-5"
             />
             <span className="sr-only">TUMO portfolio</span>
@@ -104,11 +103,11 @@ export default function Home() {
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">About Me</h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              I'm a student with a keen interest in programming, always eager to try new things. Currently, I'm working
-              on personal projects to enhance my software development skills. I find it stimulating to exchange ideas
-              with fellow developers and learn from their experiences. My goal is to continually expand my knowledge and
-              grow within the field of computer science. I'm actively seeking opportunities to apply my abilities and
-              contribute to engaging projects.
+              I&apos;m a student with a keen interest in programming, always eager to try new things. Currently,
+              I&apos;m working on personal projects to enhance my software development skills. I find it stimulating to
+              exchange ideas with fellow developers and learn from their experiences. My goal is to continually expand
+              my knowledge and grow within the field of computer science. I&apos;m actively seeking opportunities to
+              apply my abilities and contribute to engaging projects.
             </p>
             <div className="mt-8 flex justify-center">
               <Link
@@ -122,7 +121,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/*Skills section*/}
+      {/* Skills section */}
       <section id="skills" className="bg-muted/50 py-24">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Tools and Skills</h2>
@@ -216,7 +215,7 @@ export default function Home() {
               >
                 <div className="aspect-video w-full overflow-hidden bg-muted">
                   <img
-                    src={`https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m`}
+                    src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m"
                     alt={`Project ${item}`}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
@@ -246,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <Section id="contact" className="bg-muted/50 py-24">
+      <section id="contact" className="bg-muted/50 py-24">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Get in Touch</h2>
           <div className="mx-auto max-w-md">
@@ -291,7 +290,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Interactive Terminal Section */}
       <TerminalSection />
