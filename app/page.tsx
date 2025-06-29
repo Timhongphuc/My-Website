@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
 import { MdVideocam, Md3dRotation, MdPrint, MdMusicNote } from "react-icons/md"
-import { TerminalSection } from "@/components/terminal-section"
 
 export default function Home() {
   return (
@@ -27,7 +26,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          <Button variant="outline" size="sm" className="md:hidden bg-transparent">
+          <Button variant="outline" size="sm" className="md:hidden">
             Menu
           </Button>
         </div>
@@ -35,7 +34,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="container flex min-h-screen flex-col items-center justify-center py-24 text-center">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Hi, I&apos;m Tim Seufert</h1>
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Hi, I'am Tim Seufert</h1>
         <p className="mt-4 text-xl text-muted-foreground">High School Developer</p>
         <div className="mt-8 flex space-x-4">
           <Link
@@ -56,7 +55,7 @@ export default function Home() {
             <FaMedium className="h-5 w-5" />
             <span className="sr-only">Medium</span>
           </Link>
-          <Link
+          {/*. <Link
             href="https://www.behance.net/timseufert1/"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +63,7 @@ export default function Home() {
           >
             <FaBehance className="h-5 w-5" />
             <span className="sr-only">Behance</span>
-          </Link>
+          </Link>*/}
           <Link
             href="https://portfolio.de.tumo.world/p/lqg1d406zry9vwnx16z1k52pn7xmow3v"
             target="_blank"
@@ -73,7 +72,7 @@ export default function Home() {
           >
             <img
               src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreidhf6okeioofrwg6biky7wmsk4mnojowpoholckt2ohvociks6ne4"
-              alt="TUMO Logo"
+              alt="T"
               className="h-5 w-5"
             />
             <span className="sr-only">TUMO portfolio</span>
@@ -103,11 +102,11 @@ export default function Home() {
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">About Me</h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              I&apos;m a student with a keen interest in programming, always eager to try new things. Currently,
-              I&apos;m working on personal projects to enhance my software development skills. I find it stimulating to
-              exchange ideas with fellow developers and learn from their experiences. My goal is to continually expand
-              my knowledge and grow within the field of computer science. I&apos;m actively seeking opportunities to
-              apply my abilities and contribute to engaging projects.
+              I'm a student with a keen interest in programming, always eager to try new things. Currently, I'm working
+              on personal projects to enhance my software development skills. I find it stimulating to exchange ideas
+              with fellow developers and learn from their experiences. My goal is to continually expand my knowledge and
+              grow within the field of computer science. I'm actively seeking opportunities to apply my abilities and
+              contribute to engaging projects.
             </p>
             <div className="mt-8 flex justify-center">
               <Link
@@ -121,80 +120,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills section */}
+      {/*Skills section*/}
       <section id="skills" className="bg-muted/50 py-24">
         <div className="container">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Tools and Skills</h2>
-          <div className="mx-auto max-w-6xl">
-            <div className="space-y-12">
+          <div className="mx-auto max-w-4xl">
+            <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h3 className="mb-6 text-2xl font-semibold text-center">Tools</h3>
-                <div className="flex flex-wrap justify-center gap-6">
-                  <div className="flex items-center gap-2">
-                    <FaMicrosoft className="h-5 w-5 text-blue-600" />
-                    <span className="text-sm">Microsoft Office</span>
+                <h3 className="mb-6 text-2xl font-semibold">Tools</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <FaMicrosoft className="h-6 w-6 text-blue-600" />
+                    <span>Microsoft Office</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TbBrandVscode className="h-5 w-5 text-blue-500" />
-                    <span className="text-sm">Visual Studio Code</span>
+                  <div className="flex items-center gap-3">
+                    <TbBrandVscode className="h-6 w-6 text-blue-500" />
+                    <span>Visual Studio Code</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MdVideocam className="h-5 w-5 text-purple-600" />
-                    <span className="text-sm">Final Cut Pro</span>
+                  <div className="flex items-center gap-3">
+                    <MdVideocam className="h-6 w-6 text-purple-600" />
+                    <span>Final Cut Pro</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MdMusicNote className="h-5 w-5 text-purple-600" />
-                    <span className="text-sm">Logic Pro</span>
+                  <div className="flex items-center gap-3">
+                    <MdMusicNote className="h-6 w-6 text-purple-600" />
+                    <span>Logic Pro</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Md3dRotation className="h-5 w-5 text-orange-500" />
-                    <span className="text-sm">Shapr3D</span>
+                  <div className="flex items-center gap-3">
+                    <Md3dRotation className="h-6 w-6 text-orange-500" />
+                    <span>Shapr3D</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <SiXcode className="h-5 w-5 text-blue-400" />
-                    <span className="text-sm">Xcode</span>
+                  <div className="flex items-center gap-3">
+                    <SiXcode className="h-6 w-6 text-blue-400" />
+                    <span>Xcode</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaFigma className="h-5 w-5 text-purple-500" />
-                    <span className="text-sm">Figma</span>
+                  <div className="flex items-center gap-3">
+                    <FaFigma className="h-6 w-6 text-purple-500" />
+                    <span>Figma</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MdPrint className="h-5 w-5 text-green-600" />
-                    <span className="text-sm">BambuLab Studio</span>
+                  <div className="flex items-center gap-3">
+                    <MdPrint className="h-6 w-6 text-green-600" />
+                    <span>BambuLab Studio</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaSlack className="h-5 w-5 text-purple-600" />
-                    <span className="text-sm">Slack</span>
+                  <div className="flex items-center gap-3">
+                    <FaSlack className="h-6 w-6 text-purple-600" />
+                    <span>Slack</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaGithub className="h-5 w-5 text-gray-800" />
-                    <span className="text-sm">GitHub</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaCode className="h-5 w-5 text-gray-700" />
-                    <span className="text-sm">Terminal</span>
+                  <div className="flex items-center gap-3">
+                    <FaGithub className="h-6 w-6 text-gray-800" />
+                    <span>GitHub</span>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="mb-6 text-2xl font-semibold text-center">Skills</h3>
-                <div className="flex flex-wrap justify-center gap-6">
-                  <div className="flex items-center gap-2">
-                    <FaApple className="h-5 w-5 text-gray-600" />
-                    <span className="text-sm">Swift(UI)</span>
+                <h3 className="mb-6 text-2xl font-semibold">Skills</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <FaApple className="h-6 w-6 text-gray-600" />
+                    <span>Swift(UI)</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaCode className="h-5 w-5 text-blue-500" />
-                    <span className="text-sm">Processing</span>
+                  <div className="flex items-center gap-3">
+                    <FaCode className="h-6 w-6 text-blue-500" />
+                    <span>Processing</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaCode className="h-5 w-5 text-orange-500" />
-                    <span className="text-sm">HTML (Basics)</span>
+                  <div className="flex items-center gap-3">
+                    <FaCode className="h-6 w-6 text-orange-500" />
+                    <span>HTML (Basics)</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MdPrint className="h-5 w-5 text-green-600" />
-                    <span className="text-sm">3D Printing</span>
+                  <div className="flex items-center gap-3">
+                    <MdPrint className="h-6 w-6 text-green-600" />
+                    <span>3D Printing</span>
                   </div>
                 </div>
               </div>
@@ -215,7 +210,7 @@ export default function Home() {
               >
                 <div className="aspect-video w-full overflow-hidden bg-muted">
                   <img
-                    src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m"
+                    src={`https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m`}
                     alt={`Project ${item}`}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
@@ -278,7 +273,7 @@ export default function Home() {
                 <FaMedium className="h-5 w-5" />
                 <span>medium.com/@tiefentechnik</span>
               </Link>
-              <Link
+              {/**<Link
                 href="https://behance.net/timseufert1/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -286,14 +281,11 @@ export default function Home() {
               >
                 <FaBehance className="h-5 w-5" />
                 <span>behance.net/timseufert1</span>
-              </Link>
+              </Link>*/}
             </div>
           </div>
         </div>
       </section>
-
-      {/* Interactive Terminal Section */}
-      <TerminalSection />
 
       {/* Footer */}
       <footer className="border-t py-8">
