@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tim Seufert - High School Developer",
     description: "Portfolio of Tim Seufert, a passionate high school developer",
-    url: "https://timseufert.de",
+    url: "https://timseufert.dev",
     siteName: "Tim Seufert Portfolio",
     type: "website",
   },
