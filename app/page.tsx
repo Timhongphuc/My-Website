@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
 import { MdVideocam, Md3dRotation, MdPrint, MdMusicNote } from "react-icons/md"
-import { TerminalSection } from "@/components/terminal-section"
 
 export default function Home() {
   return (
@@ -291,9 +290,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Interactive Terminal Section */}
-      <TerminalSection />
 
       {/* Footer */}
       <footer className="border-t py-8">
