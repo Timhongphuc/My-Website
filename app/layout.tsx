@@ -1,40 +1,20 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import type { Metadata } from 'next'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Tim Seufert - High School Developer",
-  description:
-    "Portfolio of Tim Seufert, a passionate high school developer interested in programming, AI research, and technology.",
-  keywords: ["Tim Seufert", "developer", "portfolio", "programming", "Swift", "iOS", "web development"],
-  authors: [{ name: "Tim Seufert" }],
-  creator: "Tim Seufert",
-  openGraph: {
-    title: "Tim Seufert - High School Developer",
-    description: "Portfolio of Tim Seufert, a passionate high school developer",
-    url: "https://timseufert.dev",
-    siteName: "Tim Seufert Portfolio",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tim Seufert - High School Developer",
-    description: "Portfolio of Tim Seufert, a passionate high school developer",
-  },
-    generator: 'v0.dev'
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.dev',
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
