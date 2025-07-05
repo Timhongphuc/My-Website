@@ -3,14 +3,21 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 
-const InteractiveTerminal = () => {
-  const [input, setInput] = useState("")
-  const [history, setHistory] = useState<{ input: string; output: string[] }[]>([])
-  const terminalRef = useRef<HTMLDivElement>(null)
+interface Command {
+  input: string
+  output: string[]
+}
 
-  useEffect(() => {
-    terminalRef.current?.scrollTo(0, terminalRef.current.scrollHeight)
-  }, [history])
+export function TerminalSection() {
+  const [input, setInput] = useState("")
+  const [history, setHistory] = useState<Command[]>([
+    {
+      input: "welcome",
+      output: ["Welcome to Tim's Terminal!", 'Type "help" to see available commands.', ""],
+    },
+  ])
+  const inputRef = useRef<HTMLInputElement>(null)
+  const terminalRef = useRef<HTMLDivElement>(null)
 
   const commands: Record<string, string[]> = {
     help: [
@@ -97,7 +104,6 @@ const InteractiveTerminal = () => {
       "Architecture: arm64",
       "",
     ],
-    history: ["Command history will be shown here after you use some commands!", ""],
     github: ["Opening GitHub profile...", "github.com/timhongphuc", ""],
     linkedin: ["Opening LinkedIn profile...", "Connect with me on LinkedIn!", ""],
     resume: ["Downloading resume...", "resume.pdf - Download started", ""],
@@ -111,33 +117,12 @@ const InteractiveTerminal = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const trimmedInput = input.trim()
-
-    if (!trimmedInput) return
+    const trimmedInput = input.trim().toLowerCase()
 
     if (trimmedInput === "clear") {
       setHistory([])
       setInput("")
       return
-    }
-
-    if (commands[trimmedInput]) {
-      setHistory((prev) => [...prev, { input: trimmedInput, output: commands[trimmedInput] }])
-      setInput("")
-      return
-    }
-
-    if (trimmedInput === "github") {
-      window.open("https://github.com/timhongphuc", "_blank")
-    }
-
-    if (trimmedInput === "linkedin") {
-      window.open("https://linkedin.com/in/timseufert", "_blank")
-    }
-
-    if (trimmedInput === "resume") {
-      // You can replace this with actual resume download link
-      window.open("mailto:timhongphuc@proton.me?subject=Resume Request", "_blank")
     }
 
     // Handle echo command
@@ -183,7 +168,7 @@ const InteractiveTerminal = () => {
       return
     }
 
-    // Update history command to show actual command history
+    // Handle history command
     if (trimmedInput === "history") {
       const historyOutput = history.map((cmd, index) => `${index + 1}  ${cmd.input}`).slice(-10)
       historyOutput.push("")
@@ -192,40 +177,86 @@ const InteractiveTerminal = () => {
       return
     }
 
-    setHistory((prev) => [
-      ...prev,
-      { input: trimmedInput, output: ["Command not found. Type 'help' for available commands.", ""] },
-    ])
+    // Handle external links
+    if (trimmedInput === "github") {
+      window.open("https://github.com/timhongphuc", "_blank")
+    }
+
+    if (trimmedInput === "linkedin") {
+      window.open("https://linkedin.com/in/timseufert", "_blank")
+    }
+
+    if (trimmedInput === "resume") {
+      window.open("mailto:timhongphuc@proton.me?subject=Resume Request", "_blank")
+    }
+
+    const output = commands[trimmedInput] || [
+      `Command not found: ${trimmedInput}`,
+      'Type "help" to see available commands.',
+      "",
+    ]
+
+    setHistory((prev) => [...prev, { input: input.trim(), output }])
     setInput("")
   }
 
+  useEffect(() => {
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight
+    }
+  }, [history])
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [])
+
   return (
-    <div
-      className="bg-gray-800 text-green-400 p-4 rounded-md shadow-lg w-full h-96 overflow-y-auto font-mono text-sm"
-      ref={terminalRef}
-    >
-      <div className="mb-2">Welcome to the interactive terminal. Type 'help' to see available commands.</div>
-      {history.map((item, index) => (
-        <div key={index} className="mb-2">
-          <div className="text-blue-500">&gt; {item.input}</div>
-          {item.output.map((line, lineIndex) => (
-            <div key={lineIndex}>{line}</div>
-          ))}
+    <section className="py-12 bg-white">
+      <div className="container">
+        <div className="mx-auto max-w-4xl">
+          <div className="bg-black text-green-400 rounded-lg shadow-2xl border border-gray-700 font-mono text-sm">
+            <div className="flex items-center justify-between p-2 bg-gray-800 rounded-t-lg">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <span className="text-gray-300 text-xs">tim@portfolio:~$</span>
+              <div className="w-6"></div>
+            </div>
+
+            <div ref={terminalRef} className="p-3 h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600">
+              {history.map((cmd, index) => (
+                <div key={index} className="mb-2">
+                  <div className="text-blue-400">
+                    <span className="text-green-400">tim@portfolio:~$</span> {cmd.input}
+                  </div>
+                  {cmd.output.map((line, lineIndex) => (
+                    <div key={lineIndex} className="text-green-400">
+                      {line}
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              <form onSubmit={handleSubmit} className="flex">
+                <span className="text-green-400 mr-2">tim@portfolio:~$</span>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  className="flex-1 bg-transparent text-green-400 outline-none"
+                  placeholder="Type a command..."
+                  autoComplete="off"
+                />
+              </form>
+            </div>
+          </div>
         </div>
-      ))}
-      <form onSubmit={handleSubmit} className="flex items-center">
-        <span className="mr-2 text-blue-500">&gt;</span>
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="bg-gray-700 text-green-400 flex-grow p-1 rounded-md focus:outline-none"
-          placeholder="Enter command"
-          autoFocus
-        />
-      </form>
-    </div>
+      </div>
+    </section>
   )
 }
-
-export default InteractiveTerminal
