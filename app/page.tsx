@@ -39,7 +39,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <header className="fixed top-0 z-10 w-full border-b bg-background/80 backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container mx-auto px-6 flex h-16 items-center justify-between">
           <Link href="/" className="text-xl font-bold">
             TS
           </Link>
@@ -61,7 +61,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container flex min-h-screen flex-col items-center justify-center py-24 text-center">
+      <section className="container mx-auto px-6 flex min-h-screen flex-col items-center justify-center py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Hi, I&apos;m Tim Seufert</h1>
         <p className="mt-4 text-xl text-muted-foreground">High School Developer</p>
         <div className="mt-8 flex space-x-4">
@@ -126,7 +126,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="bg-muted/50 py-24">
-        <div className="container">
+        <div className="container mx-auto px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">About Me</h2>
           <div className="mx-auto max-w-3xl">
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
@@ -150,7 +150,7 @@ export default function Home() {
 
       {/* Skills section */}
       <section id="skills" className="bg-muted/50 py-24">
-        <div className="container">
+        <div className="container mx-auto px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Tools and Skills</h2>
           <div className="mx-auto max-w-6xl">
             <div className="space-y-12">
@@ -232,7 +232,7 @@ export default function Home() {
 
       {/* Work Section */}
       <section id="work" className="py-24">
-        <div className="container">
+        <div className="container mx-auto px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Personal Work and Projects</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[1].map((item) => (
@@ -273,7 +273,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="bg-muted/50 py-24">
-        <div className="container">
+        <div className="container mx-auto px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Get in Touch</h2>
           <div className="mx-auto max-w-md">
             <p className="mb-8 text-center text-lg text-muted-foreground">
@@ -321,7 +321,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t py-8">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div className="container mx-auto px-6 flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Tim Seufert. All rights reserved.
           </p>
