@@ -1,13 +1,40 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 import { FaMedium, FaGithub, FaCode, FaBehance } from "react-icons/fa6"
 import { TbMail, TbBrandVscode } from "react-icons/tb"
 import { Button } from "@/components/ui/button"
 import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
 import { MdVideocam, Md3dRotation, MdPrint, MdMusicNote } from "react-icons/md"
-import { TerminalSection } from "@/components/terminal-section"
+import { CaseStudyModal } from "@/components/case-study-modal"
+
+const projectData = {
+  1: {
+    title: "Simple AI Chatbot Experiment",
+    subtitle: "SimplestMachine{} Project",
+    description:
+      "My first attempt at experimenting with AI APIs, built as a learning project to understand how AI chatbots work.",
+    details:
+      "SimplestMachine{} was my introduction to working with AI APIs. This simple project helped me learn the basics of integrating external AI services into applications. I used the Cohere AI API to create a basic chatbot interface, which taught me about API calls, response handling, and building simple user interfaces for AI interactions.",
+    image:
+      "https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m",
+    technologies: ["Python", "Gradio", "Cohere", "Huggingface"],
+  },
+}
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null)
+
+  const openModal = (projectId: number) => {
+    setSelectedProject(projectId)
+  }
+
+  const closeModal = () => {
+    setSelectedProject(null)
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -27,7 +54,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          <Button variant="outline" size="sm" className="md:hidden">
+          <Button variant="outline" size="sm" className="md:hidden bg-transparent">
             Menu
           </Button>
         </div>
@@ -222,7 +249,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold">SimplestMachine{}</h3>
-                  <p className="mt-2 text-muted-foreground">This is my personal AI research lab.</p>
+                  <p className="mt-2 text-muted-foreground">This is my personal AI chatbot experiment.</p>
                   <div className="mt-4 flex space-x-2">
                     <Link
                       href="https://simplestmachine.framer.website/old-home"
@@ -230,12 +257,12 @@ export default function Home() {
                     >
                       View Project
                     </Link>
-                    <Link
-                      href="https://simplestmachine.framer.website/old-home"
+                    <button
+                      onClick={() => openModal(item)}
                       className="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       Case Study
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -292,9 +319,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Interactive Terminal Section */}
-      <TerminalSection />
-
       {/* Footer */}
       <footer className="border-t py-8">
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
@@ -304,6 +328,22 @@ export default function Home() {
           <div className="flex space-x-4"></div>
         </div>
       </footer>
+
+      {/* Case Study Modal */}
+      {selectedProject && (
+        <CaseStudyModal
+          isOpen={!!selectedProject}
+          onClose={closeModal}
+          project={projectData[selectedProject as keyof typeof projectData]}
+        >
+          <ul className="space-y-2 text-gray-700">
+            <li>• First hands-on experience with AI APIs</li>
+            <li>• Learning project focused on understanding chatbot basics</li>
+            <li>• Simple implementation using Cohere's language model</li>
+            <li>• Built with Gradio for easy web interface creation</li>
+          </ul>
+        </CaseStudyModal>
+      )}
     </div>
   )
 }

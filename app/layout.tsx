@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tim Seufert - High School Developer",
     description: "Portfolio of Tim Seufert, a passionate high school developer",
-    url: "https://timseufert.dev",
+    url: "https://timseufert.de",
     siteName: "Tim Seufert Portfolio",
     type: "website",
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Tim Seufert - High School Developer",
     description: "Portfolio of Tim Seufert, a passionate high school developer",
   },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
