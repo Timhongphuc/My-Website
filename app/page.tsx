@@ -201,6 +201,10 @@ export default function Home() {
                     <FaCode className="h-5 w-5 text-gray-700" />
                     <span className="text-sm">Terminal</span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <FaCode className="h-5 w-5 text-purple-500" />
+                    <span className="text-sm">Freeplay</span>
+                  </div>
                 </div>
               </div>
 
