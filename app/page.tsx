@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { FaMedium, FaGithub, FaCode, FaBehance } from "react-icons/fa6"
-import { TbMail, TbBrandVscode } from "react-icons/tb"
+import { TbMail, TbBrandVscode, TbExternalLink } from "react-icons/tb"
 import { Button } from "@/components/ui/button"
 import { FaMicrosoft, FaApple, FaSlack, FaFigma } from "react-icons/fa6"
 import { SiXcode } from "react-icons/si"
@@ -21,6 +21,16 @@ const projectData = {
     image:
       "https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m",
     technologies: ["Python", "Gradio", "Cohere", "Huggingface"],
+  },
+  2: {
+    title: "Creative Canvas & Whiteboard",
+    subtitle: "Freeplay Project",
+    description:
+      "A creative digital canvas where you can write, draw, plan and build projects and ideas. Currently in development.",
+    details:
+      "Freeplay is my current project - a creative whiteboard application that allows users to freely express their ideas through drawing, writing, and planning. The app features an intuitive interface with various drawing tools, color options, and shape creation capabilities. It's designed to be a digital space for brainstorming, sketching, and organizing thoughts visually.",
+    image: "/images/freeplay-screenshot.png",
+    technologies: ["React", "Next.js", "Canvas API", "TypeScript", "Tailwind CSS"],
   },
 }
 
@@ -235,38 +245,75 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight">Personal Work and Projects</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[1].map((item) => (
-              <div
-                key={item}
-                className="group overflow-hidden rounded-lg border bg-background transition-all hover:shadow-md"
-              >
-                <div className="aspect-video w-full overflow-hidden bg-muted">
-                  <img
-                    src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m"
-                    alt={`Project ${item}`}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+            {/* Freeplay Project */}
+            <div className="group overflow-hidden rounded-lg border bg-background transition-all hover:shadow-md">
+              <div className="aspect-video w-full overflow-hidden bg-muted">
+                <img
+                  src="/images/freeplay-screenshot.png"
+                  alt="Freeplay creative canvas application"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-2">
+                  <img src="/images/freeplay-logo.png" alt="Freeplay logo" className="h-8 w-8" />
+                  <h3 className="text-xl font-semibold">Freeplay</h3>
+                  <span className="px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full">In Progress</span>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold">SimplestMachine{}</h3>
-                  <p className="mt-2 text-muted-foreground">This is my personal AI chatbot experiment.</p>
-                  <div className="mt-4 flex space-x-2">
-                    <Link
-                      href="https://simplestmachine.framer.website/old-home"
-                      className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      View Project
-                    </Link>
-                    <button
-                      onClick={() => openModal(item)}
-                      className="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      Case Study
-                    </button>
-                  </div>
+                <p className="mt-2 text-muted-foreground">
+                  A creative canvas where you can write, draw, plan and build projects and ideas.
+                </p>
+                <div className="mt-4 flex space-x-2">
+                  <Link
+                    href="https://www.freeplayapp.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <TbExternalLink className="h-4 w-4 mr-1" />
+                    Website
+                  </Link>
+                  <Link
+                    href="https://github.com/Timhongphuc/Freeplay"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    <FaGithub className="h-4 w-4 mr-1" />
+                    GitHub
+                  </Link>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* SimplestMachine Project */}
+            <div className="group overflow-hidden rounded-lg border bg-background transition-all hover:shadow-md">
+              <div className="aspect-video w-full overflow-hidden bg-muted">
+                <img
+                  src="https://aqua-cheerful-octopus-393.mypinata.cloud/ipfs/bafkreihbw2aimpbq6jrzgegyitmlhqbvsfdrumicw77c3ablsfl6kzxe5m"
+                  alt="SimplestMachine AI project"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold">SimplestMachine{}</h3>
+                <p className="mt-2 text-muted-foreground">This is my personal AI chatbot experiment.</p>
+                <div className="mt-4 flex space-x-2">
+                  <Link
+                    href="https://simplestmachine.framer.website/old-home"
+                    className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    View Project
+                  </Link>
+                  <button
+                    onClick={() => openModal(1)}
+                    className="inline-flex h-9 items-center justify-center rounded-md px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    Case Study
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

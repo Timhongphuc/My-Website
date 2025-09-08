@@ -12,3 +12,13 @@ Crawl-delay: 1
 
 # Allow all search engines to index the site
 # This is a portfolio site meant to be discoverable
+
+# Block any admin or private areas (if you add them later)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow indexing of images and other assets
+Allow: /images/
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
