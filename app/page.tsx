@@ -265,7 +265,7 @@ export default function Home() {
                 </p>
                 <div className="mt-4 flex space-x-2">
                   <Link
-                    href="http://www.freeplayapp.vercel.app"
+                    href="https://www.freeplayapp.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
