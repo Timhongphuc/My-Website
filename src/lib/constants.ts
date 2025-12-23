@@ -1,9 +1,9 @@
 export const LINKS = {
-  github: "https://github.com/Ladvace",
-  linkedin: "https://www.linkedin.com/in/gianmarco-cavallo/",
-  medium: "https://ladvace.medium.com/",
-  discord: "https://discordapp.com/users/163300027618295808",
-  dribble: "https://dribbble.com/Ladvace_Jace",
+  github: "https://github.com/Timhongphuc",
+  googleDevs: "https://g.dev/timhongphuc",
+  medium: "https://medium.com/@Tiefentechnik",
+  discord: "https://discordapp.com/users/1088801571132952616",
+  tumo: "https://portfolio.de.tumo.world/p/lqg1d406zry9vwnx16z1k52pn7xmow3v",
   email: "contact@gianmarcocavallo.com<",
 };
 

@@ -22,7 +22,7 @@ const schema =
         "@type": "Person",
         name: "Gianmarco",
         url: Astro.url.origin,
-        sameAs: [LINKS.linkedin, LINKS.github],
+        sameAs: [LINKS.googleDevs, LINKS.github],
         image: `${Astro.url.origin}/og-image.png`,
         jobTitle: "Freelance Frontend Developer",
         worksFor: {
@@ -30,13 +30,13 @@ const schema =
           name: "Self-Employed",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Italy",
-            addressCountry: "IT",
+            addressLocality: "Germany",
+            addressCountry: "GER",
           },
         },
         nationality: {
           "@type": "Country",
-          name: "Italy",
+          name: "German",
         },
       }
     : {
@@ -53,7 +53,7 @@ const schema =
           "@type": "Person",
           name: "Gianmarco",
           url: Astro.url.origin,
-          sameAs: [LINKS.linkedin, LINKS.github],
+          sameAs: [LINKS.googleDevs, LINKS.github],
         },
         publisher: {
           "@type": "Organization",

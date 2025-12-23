@@ -6,16 +6,16 @@ const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
 
   const visitedCountries = [
+    "Germany",
     "France",
-    "China",
-    "Italy",
-    "Sri Lanka",
-    "Turkey",
+    "Spain",
+    "Czech Republic",
+    "Denmark",
     "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
+    "Vietnam",
+    "USA",
+    "England",
+    "Netherlands",
   ];
 
   onMount(() => {
