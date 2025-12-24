@@ -1,18 +1,14 @@
 ---
-title: "Hello, World"
-description: "this is a post example"
+title: "Hello, World!"
+description: "Just wanted to say hello real quick"
 pubDate: 2023-01-21
 category: "intro"
 draft: false
 ---
 
-# Hi there!
+# Hi there, This is my first blog post on my own website!
 
-This Markdown file creates a page at `your-domain.com/blog/post1/`
+## Welcome on my Website
 
-It probably isn't styled much, but Markdown does support:
-
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+Hi my name is Tim Seufert. 
+I am a high school student in Berlin (Germany) in 10th grade. 
