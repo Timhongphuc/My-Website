@@ -48,7 +48,7 @@ or
 $ npm run dev
 ```
 
-# Be sure to replace the momoji and all the relative information, such as email, website and other info, if you don't your website is gonna point to my domain and to my info
+### Be sure to replace my photo and all the relative information, such as email, website and other info, if you don't your website is gonna point to my domain and to my info
 
 ## REMOVE THE umami analytics script tag (or replace it with your id) in `src/layouts/Layout.astro`
 
