@@ -56,14 +56,15 @@ $ npm run dev
 
 remember to replace the `site` and other properties with your data in `astro.config.mjs`
 
+ ----
 
-### Important information
+# Important information
 
 - Credits für the UI goes to [@Ladvace](https://github.com/Ladvace)
 - I've built this project for my personal use only
 - This website is mostly based on the astro-bento-portfolio open source project
 
-### Copyright notice 
+## Copyright notice 
 
 ```text
 Copyright (c) 2024 Gianmarco Cavallo and others
@@ -88,10 +89,10 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-### Authors ❤️
+## Authors ❤️
 
 - Gianmarco - https://github.com/Ladvace
 
-## My old Website
+### My old Website
 
 (My old Website)[https://v0-minimalistic-portfolio-nine.vercel.app/]
