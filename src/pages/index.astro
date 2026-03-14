@@ -13,7 +13,7 @@ import { formatDate } from "../lib/helpers";
 const posts = (await getCollection("blog"))?.sort(
   (blogEntryA, blogEntryB) =>
     (blogEntryB.data.pubDate || new Date()).getTime() -
-    (blogEntryA.data.pubDate || new Date()).getTime()
+    (blogEntryA.data.pubDate || new Date()).getTime(),
 );
 ---
 
@@ -95,11 +95,11 @@ const posts = (await getCollection("blog"))?.sort(
     </Card>
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-xs">
-        © 2025 · Crafted using <a
+        © 2026 · Modified by Tim Seufert using <a
           class="text-red-500"
           href="https://github.com/Ladvace/astro-bento-portfolio"
           target="_blank">an Astro theme</a
-        > by Tim Seufert.
+        >.
       </p>
     </Card>
   </main>
