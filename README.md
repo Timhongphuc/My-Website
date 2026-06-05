@@ -60,7 +60,7 @@ remember to replace the `site` and other properties with your data in `astro.con
 
 # Important information
 
-- Credits für the UI goes to [@Ladvace](https://github.com/Ladvace)
+- Credit for the UI goes to [@Ladvace](https://github.com/Ladvace)
 - I've built this project for my personal use only
 - This website is mostly based on the astro-bento-portfolio open source project
 
